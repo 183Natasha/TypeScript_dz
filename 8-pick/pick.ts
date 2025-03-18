@@ -13,8 +13,8 @@ const user ={
 
 type KeyOfUser = keyof typeof user;
 
-function pickObjectCase (user: IUser, Keys : KeyOfUser[]) :  Partial <IUser>{
-    const result: Partial <IUser>= {}
+function pickObjectCase (user: IUser, Keys : KeyOfUser[]) : IUser{
+    const result: IUser= {}
     for (const key of Keys){
         if (user[key] !== undefined){
             result[key] = user[key]
