@@ -20,6 +20,7 @@ let b: IB = {
 
 type ExcludedKeys<T, U> =  Exclude<keyof T, keyof U>
 
+//Вариант1 
 function difference<T extends object, U extends object>(obj1: T, obj2: U): Pick<T, ExcludedKeys<T, U>> {
     const res = {} as Pick<T, ExcludedKeys<T, U>>;
 
@@ -31,6 +32,20 @@ function difference<T extends object, U extends object>(obj1: T, obj2: U): Pick<
     return res;
 }
 
+//Вариант2 с использованием Omit
+function differenceOmit<T extends object, U extends object>(obj1: T, obj2: U): Omit<T, keyof U> {
+    const res = {} as Omit<T, keyof U>;
+
+    for (let key in obj1) {
+        if (!(key in obj2)) {
+            res[key as keyof Omit<T, keyof U>] = obj1[key as keyof T];
+        }
+    }
+    return res;
+}
 
 let v0 = difference(a,b)
 console.log(v0)
+
+let v00 = differenceOmit(a,b)
+console.log(v00)
