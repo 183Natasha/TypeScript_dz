@@ -18,9 +18,9 @@ let b: IB = {
     c: true
 }
 
-type ExcludedKeys<T, U> =  Exclude<keyof T, keyof U>
 
 //Вариант1 
+type ExcludedKeys<T, U> =  Exclude<keyof T, keyof U>
 function difference<T extends object, U extends object>(obj1: T, obj2: U): Pick<T, ExcludedKeys<T, U>> {
     const res = {} as Pick<T, ExcludedKeys<T, U>>;
 
