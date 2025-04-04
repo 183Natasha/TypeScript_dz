@@ -1,7 +1,7 @@
 class RequestBuilder{
     private method: "GET" | "POST" = "GET";
     private url: string= "";
-    private headers: Record<string, string> = {}
+    private headers: Record<string, string> = {} //{ [key: string]: string }.
 
     setMethod(method: "GET"|"POST"):this{
         this.method = method;

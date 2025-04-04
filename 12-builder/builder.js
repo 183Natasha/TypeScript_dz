@@ -1,16 +1,9 @@
 "use strict";
-// class MyRequest{
-//     constructor(
-//         private method: "GET" | "POST",
-//         private url: string,
-//         private headers: string
-//     ){}
-// }
 class RequestBuilder {
     constructor() {
         this.method = "GET";
         this.url = "";
-        this.headers = {};
+        this.headers = {}; //{ [key: string]: string }.
     }
     setMethod(method) {
         this.method = method;
@@ -24,11 +17,6 @@ class RequestBuilder {
         this.headers = headers;
         return this;
     }
-    // build():MyRequest{
-    //     return new MyRequest(
-    //     this.method, this.url, this.headers
-    // )
-    // }
     async execute() {
         return fetch(this.url, { method: this.method, headers: this.headers });
     }
