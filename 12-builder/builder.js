@@ -24,6 +24,6 @@ class RequestBuilder {
 const request = new RequestBuilder()
     .setMethod('GET')
     .setURL("https://183natasha.github.io/my_first_progect/")
-    .setHeaders()
+    .setHeaders({ "Accept": "application/json" })
     .execute()
     .then(response => console.log(response));
