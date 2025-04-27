@@ -46,8 +46,12 @@ class TaskList {
 		return this.tasks.length;
 	}
 
-	public getIterator() {
+	public getIteratorPriority() {
 		return new PriorityTaskItearator(this);
+	}
+
+    public getIteratorId() {
+		return new idTaskItearator(this);
 	}
 }
 
@@ -112,7 +116,7 @@ const taskList = new TaskList();
 taskList.addTask(new Task(8, 1, '01-01-2023', 'Тест'));
 taskList.addTask(new Task(1, 2, '01-01-2023', 'Тест'));
 taskList.addTask(new Task(3, 3, '01-01-2023', 'Тест'));
-const iterator = taskList.getIterator();
+const iterator = taskList.getIteratorPriority();
 console.log(iterator.current())
 console.log(iterator.next())
 console.log(iterator.next())
@@ -120,7 +124,7 @@ console.log(iterator.prev())
 console.log(iterator.index())
 
 
-const iterator2 = taskList.getIterator();
+const iterator2 = taskList.getIteratorId();
 console.log(iterator.current())
 console.log(iterator.next())
 console.log(iterator.next())
