@@ -62,7 +62,7 @@ interface IIterator<T> {
 	index(): number;
 }
 
-class PriorityTaskItearator implements IIterator<Task> {
+class PriorityTaskIterator implements IIterator<Task> {
 	private position: number = 0;
 	private taskList: TaskList;
 
@@ -87,7 +87,7 @@ class PriorityTaskItearator implements IIterator<Task> {
 	}
 }
 
-class idTaskItearator implements IIterator<Task> {
+class idTaskIterator implements IIterator<Task> {
 	private position: number = 0;
 	private taskList: TaskList;
 
@@ -125,8 +125,8 @@ console.log(iterator.index())
 
 
 const iterator2 = taskList.getIteratorId();
-console.log(iterator.current())
-console.log(iterator.next())
-console.log(iterator.next())
-console.log(iterator.prev())
-console.log(iterator.index())
+console.log(iterator2.current())
+console.log(iterator2.next())
+console.log(iterator2.next())
+console.log(iterator2.prev())
+console.log(iterator2.index())

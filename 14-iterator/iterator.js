@@ -50,7 +50,7 @@ class TaskList {
         return new PriorityTaskItearator(this);
     }
 }
-class PriorityTaskItearator {
+class PriorityTaskIterator{
     constructor(taskList) {
         this.position = 0;
         taskList.sortByPriority();
@@ -71,7 +71,7 @@ class PriorityTaskItearator {
         return this.position;
     }
 }
-class idTaskItearator {
+class idTaskIterator{
     constructor(taskList) {
         this.position = 0;
         taskList.sortByPriority();
